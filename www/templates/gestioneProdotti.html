@@ -1,10 +1,13 @@
 <ion-view title="Gestione prodotti" id="page6" style="">
-  <ion-content padding="true" class="has-header">
-    <div class="spacer" style="width: 283px; height: 13px;"></div>
-    <a ui-sref="aggiungiProdotto()" id="gestioneProdotti-button7" class="button button-royal button-block icon-right ion-android-add-circle">Aggiungi prodotto</a>
-    <div class="spacer" style="width: 283px; height: 4px;"></div>
-    <a ui-sref="modificaProdotto()" id="gestioneProdotti-button8" class="button button-royal button-block icon-right ion-settings">Modifica prodotto</a>
-    <div class="spacer" style="width: 283px; height: 4px;"></div>
-    <a ui-sref="listaProdotti()" id="gestioneProdotti-button10" class="button button-royal button-block icon-right ion-ios-list-outline">Lista prodotti</a>
-  </ion-content>
+    <ion-nav-buttons side="left" class="has-header">
+        <button ui-sref="profilo2.magazzino()" class="button button-icon icon ion-android-arrow-back"></button>
+    </ion-nav-buttons>
+    <ion-content padding="true" class="has-header">
+        <div class="spacer" style="width: 283px; height: 13px;"></div>
+        <a ui-sref="aggiungiProdotto()" id="gestioneProdotti-button7" class="button button-royal button-block icon-right ion-android-add-circle">Aggiungi prodotto</a>
+        <div class="spacer" style="width: 283px; height: 4px;"></div>
+        <a ui-sref="modificaProdotto()" id="gestioneProdotti-button8" class="button button-royal button-block icon-right ion-settings">Modifica prodotto</a>
+        <div class="spacer" style="width: 283px; height: 4px;"></div>
+        <a ui-sref="listaProdotti()" id="gestioneProdotti-button10" class="button button-royal button-block icon-right ion-ios-list-outline">Lista prodotti</a>
+    </ion-content>
 </ion-view>
