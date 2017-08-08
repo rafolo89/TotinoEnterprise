@@ -1,22 +1,30 @@
 <ion-view title="Modifica prodotto" id="page15" style="">
   <ion-content padding="true" class="has-header">
-    <form id="modificaProdotto-form3" class="list">
+    <form id="modificaProdotto-form3" class="list" ng-controller="modificaProdottoCtrl">
       <div id="modificaProdotto-markdown4" class="show-list-numbers-and-dots">
         <p style="color:#815CAA;">Nome prodotto</p>
       </div>
-      <label class="item item-select" id="modificaProdotto-select1">
-        <span class="input-label">Seleziona il prodotto</span>
-        <select></select>
+        <label class="item item-input" id="modificaProdotto-search4" ng-show="sospesi.length>0">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" placeholder="Cerca prodotto "  ng-model="nome">
       </label>
-    </form>
+      <div class="item item-body" id="modificaProdotto-list-item-container1" ng-show="sospesi.length>0">
+        <ion-list id="modificaProdotto-list14">
+            <ion-list id="modificaProdotto-list16">
+            <ion-item class="item-icon-right positive" id="modificaProdotto-list-item16" ng-repeat="sospeso in sospesi | filter: nome" ng-model="sospesi" ng-click="selected(sospeso)"> <b>Nome:</b> {{sospeso.nome}} <b>Quantita':</b> {{sospeso.numero}}
+            </ion-item>
+          </ion-list>
+        </ion-list>
+      </div>
     <div id="modificaProdotto-markdown5" class="show-list-numbers-and-dots">
       <p style="color:#815CAA;">Quantità</p>
     </div>
-    <form id="modificaProdotto-form4" class="list">
       <label class="item item-input" id="modificaProdotto-input5">
-        <input placeholder="Inserire un numero" type="text">
+        <input placeholder="Inserire un numero" type="text"  ng-model="numero">
       </label>
-    </form>
-    <button id="modificaProdotto-button13" class="button button-royal button-block">Effettua la modifica</button>
+    <button id="modificaProdotto-button13" class="button button-royal button-block" ng-click="modifica()">Effettua la modifica</button>
+         <button id="modificaProdotto-button13" class="button button-assertive button-block" ng-click="cancella()">Elimina prodotto</button>
+ </form>
+
   </ion-content>
 </ion-view>

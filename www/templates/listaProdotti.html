@@ -1,11 +1,20 @@
 <ion-view title="Lista prodotti" id="page10" style="">
   <ion-content padding="true" class="has-header">
-    <ion-list id="listaProdotti-list4">
+      <ion-list id="modificaProdotto-list14">
+            <ion-list id="modificaProdotto-list16">
+                   <ion-item class="item-icon-right assertive" id="listaProdotti-list-item14" ng-repeat="elemento in zero | filter: nome" ng-model="zero" > <b>Nome:</b> {{elemento.nome}} <b>Quantita':</b> {{elemento.numero}}
+        <i class="icon ion-android-alert"></i>
+      </ion-item>
+            <ion-item  id="modificaProdotto-list-item16" ng-repeat="sospeso in sospesi | filter: nome" ng-model="sospesi" > <b>Nome:</b> {{sospeso.nome}} <b>Quantita':</b> {{sospeso.numero}}
+            </ion-item>
+          </ion-list>
+        </ion-list>
+   <!-- <ion-list id="listaProdotti-list4">
       <ion-item class="item-icon-right assertive" id="listaProdotti-list-item14" style="">Item 1
         <i class="icon ion-android-alert"></i>
       </ion-item>
       <ion-item id="listaProdotti-list-item15" style="">Item 2</ion-item>
       <ion-item id="listaProdotti-list-item16" style="">Item 3</ion-item>
-    </ion-list>
+    </ion-list>-->
   </ion-content>
 </ion-view>

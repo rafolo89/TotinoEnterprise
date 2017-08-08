@@ -1,21 +1,19 @@
 <ion-view title="Aggiungi prodotto" id="page8" style="">
   <ion-content padding="true" class="has-header">
-    <form id="aggiungiProdotto-form1" class="list">
+    <form id="aggiungiProdotto-form1" class="list" ng-controller="aggiungiProdottoCtrl">
       <div id="aggiungiProdotto-markdown1" class="show-list-numbers-and-dots">
         <p style="color:#815CAA;">Nome prodotto</p>
       </div>
-      <label class="item item-input" id="aggiungiProdotto-input1">
-        <input placeholder="Inserire il nome del prodotto" type="text">
+      <label class="item item-input" id="aggiungiProdotto-input1" name="prodotto">
+        <input name="prodotto" placeholder="Inserire il nome del prodotto" type="text" ng-model="prodotto">
       </label>
-    </form>
     <div id="aggiungiProdotto-markdown3" class="show-list-numbers-and-dots">
       <p style="color:#815CAA;">Quantità</p>
     </div>
-    <form id="aggiungiProdotto-form2" class="list">
-      <label class="item item-input" id="aggiungiProdotto-input3">
-        <input placeholder="Inserire un numero" type="text">
+      <label class="item item-input" id="aggiungiProdotto-input3" name="numero"> 
+        <input name="numero" placeholder="Inserire un numero" type="text" ng-model="numero">
       </label>
-    </form>
-    <button id="aggiungiProdotto-button9" class="button button-royal button-block">Aggiungi</button>
+    <button id="aggiungiProdotto-button9" class="button button-royal button-block"  ng-click="aggiungi()">Aggiungi</button>
+ </form>
   </ion-content>
 </ion-view>
