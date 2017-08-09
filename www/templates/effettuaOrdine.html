@@ -2,35 +2,43 @@
     <ion-nav-buttons side="left" class="has-header">
         <button ui-sref="profilo2.cantiere()" class="button button-icon icon ion-android-arrow-back"></button>
     </ion-nav-buttons>
-    <ion-content padding="true" class="has-header">
-        <ion-list id="effettuaOrdine-list7">
-            <label class="item item-input" id="effettuaOrdine-search1" style="">
-                <i class="icon ion-search placeholder-icon"></i>
-                <input placeholder="Cerca prodotto" type="search">
-            </label>
-        </ion-list>
-        <div class="spacer" style="width: 281.5px; height: 31px;"></div>
-        <div id="effettuaOrdine-container1">
-            <div id="effettuaOrdine-markdown26" class="show-list-numbers-and-dots">
-                <p style="color:#815CAA;">Prodotti</p>
-            </div>
-            <ion-list id="effettuaOrdine-list14">
-                <ion-item id="effettuaOrdine-list-item23" style="">Item
-                    <ion-option-button class="button-assertive">Elimina</ion-option-button>
-                </ion-item>
-                <ion-item id="effettuaOrdine-list-item44" style="">Item
-                    <ion-option-button class="button-assertive">Elimina</ion-option-button>
-                </ion-item>
+        <ion-content padding="true" class="has-header">
+            <ion-list id="effettuaOrdine-list7">
+                <label class="item item-input" id="effettuaOrdine-search1" style="">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input placeholder="Cerca prodotto" type="search" ng-model="nome">
+                </label>
             </ion-list>
-        </div>
-        <div class="spacer" style="width: 281.5px; height: 31px;"></div>
-        <div id="effettuaOrdine-markdown25" class="show-list-numbers-and-dots">
-            <p style="color:#815CAA;">Informazioni aggiuntive</p>
-        </div>
-        <form id="effettuaOrdine-form28" class="list">
+            <div class="spacer" style="width: 281.5px; height: 31px;"></div>
+            <div id="effettuaOrdine-container1">
+                <div id="effettuaOrdine-markdown26" class="show-list-numbers-and-dots">
+                    <p style="color:#815CAA;">Prodotti</p>
+                </div>
+                <ion-list id="effettuaOrdine-list14">
+                    <ion-item class="item-icon-right positive" id="effettuaOrdine-list-item44" ng-repeat="sospeso in sospesi| filter: nome" ng-model="sospesi" ng-click="selected(sospeso)"> <b style="color:#815CAA;">Nome:</b> {{sospeso.nome}} <b style="color:#815CAA;">Quantita' in magazzino:</b> {{sospeso.numero}}</ion-item>
+
+                </ion-list>
+            </div>
+            <div class="spacer" style="width: 281.5px; height: 31px;"></div>
+            <div id="effettuaOrdine-container1">
+                <div id="effettuaOrdine-markdown26" class="show-list-numbers-and-dots">
+                    <p style="color:#815CAA;">Riepilogo ordine</p>
+                </div>
+                <ion-list id="effettuaOrdine-list14">
+                    <ion-item class="item-icon-right positive" id="effettuaOrdine-list-item44" ng-repeat="selezionato in selezionati track by $index" ng-model="selezionati" > <b style="color:#815CAA;">Prodotto selezionato: </b> {{selezionato.nome}} 
+                        <input placeholder="Quantita' prodotto" type="text" ng-model="selezionati[$index].values">
+
+                        <ion-option-button class="button-assertive" ng-click="elimina(selezionato)">Elimina</ion-option-button>
+                    </ion-item>
+                </ion-list>
+            
+            <div class="spacer" style="width: 281.5px; height: 31px;"></div>
+            <div id="effettuaOrdine-markdown25" class="show-list-numbers-and-dots">
+                <p style="color:#815CAA;">Informazioni aggiuntive</p>
+            </div>
             <label class="item item-input" id="effettuaOrdine-textarea3">
-                <span class="input-label"></span><textarea placeholder="Inserisci note o prodotti non presenti nel magazzino"></textarea></label>
-    </form>
-    <button id="effettuaOrdine-button24" class="button button-royal button-block">Effettua ordine</button>
-  </ion-content>
+                <textarea placeholder="Inserisci note o prodotti non presenti nel magazzino" ng-model="selezionati.info"></textarea></label>
+            </div>
+            <button id="effettuaOrdine-button24" class="button button-royal button-block" ng-click="effettua()">Effettua ordine</button>
+</ion-content>
 </ion-view>

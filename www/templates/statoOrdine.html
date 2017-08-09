@@ -4,12 +4,15 @@
     </ion-nav-buttons>
     <ion-content padding="true" class="has-header">
         <ion-list id="statoOrdine-list8">
-            <ion-item class="item-icon-right" id="statoOrdine-list-item29" style="">Item 1
+            <ion-item class="item-icon-right" id="statoOrdine-list-item29" ng-repeat="elemento in completati" ng-model="completati" ng-click="selected(elemento)"><b style="color:#815CAA;"> Utente:</b> {{elemento.utente}} <b style="color:#815CAA;">Ordine numero':</b> {{elemento.ordine}}
                 <i class="icon ion-android-car"></i>
             </ion-item>
-            <ion-item class="item-icon-right balanced" id="statoOrdine-list-item30" style="">Item 2
+            <ion-item  class="item-icon-right balanced" id="statoOrdine-list-item30" ng-repeat="sospeso in sospesi" ng-model="sospesi" ng-click="selected(sospeso)"> <b>Utente:</b> {{sospeso.utente}} <b>Ordine numero':</b> {{sospeso.ordine}}
                 <i class="icon ion-checkmark-round"></i>
             </ion-item>
         </ion-list>
+
+
+
     </ion-content>
 </ion-view>
